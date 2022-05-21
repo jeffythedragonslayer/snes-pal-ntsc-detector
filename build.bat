@@ -1,0 +1,1 @@
+cl65 -C smc.cfg -o pal-ntsc-detector.smc -l pal-ntsc-detector.list pal-ntsc-detector.asm

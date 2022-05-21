@@ -1,0 +1,32 @@
+Modules list:
+-------------
+hello.o:
+    CODE              Offs=000000  Size=0004C3  Align=00001  Fill=0000
+    HEADER            Offs=000000  Size=00000C  Align=00001  Fill=0000
+    ROMINFO           Offs=000000  Size=00000B  Align=00001  Fill=0000
+    VECTORS           Offs=000000  Size=000020  Align=00001  Fill=0000
+
+
+Segment list:
+-------------
+Name                   Start     End    Size  Align
+----------------------------------------------------
+CODE                  008000  0084C2  0004C3  00001
+HEADER                00FFC0  00FFCB  00000C  00001
+ROMINFO               00FFD5  00FFDF  00000B  00001
+VECTORS               00FFE0  00FFFF  000020  00001
+
+
+Exports list by name:
+---------------------
+
+
+
+Exports list by value:
+----------------------
+
+
+
+Imports list:
+-------------
+
