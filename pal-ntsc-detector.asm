@@ -88,9 +88,7 @@ start:
    ldx #0
 string_loop:
 
-   jmp detect_pal_ntsc
-
-done_detecting:
+   jsr detect_pal_ntsc
 
    beq @enable_display
    sta VMDATAL
@@ -133,18 +131,19 @@ nmi:
 return_int:
    rti
 
-detect_pal_ntsc:
+.proc detect_pal_ntsc
     lda $213f
     ;    fl0mvvvv
     bit #%00010000
     beq ntsc
     lda pal_str,x
-    jmp done_detecting
+    rts
 
 ntsc:
     ; NTSC detected
    lda ntsc_str,x
-   jmp done_detecting
+   rts
+.endproc
 
 .include "charset.asm"
 
