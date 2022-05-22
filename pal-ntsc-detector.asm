@@ -88,18 +88,7 @@ start:
    ldx #0
 string_loop:
 
-    lda $213f
-    ;    fl0mvvvv
-    bit #%00010000
-    beq ntsc
-
-    lda pal_str,x
-
-    jmp done_detecting
-
-ntsc:
-    ; NTSC detected
-   lda ntsc_str,x
+   jmp detect_pal_ntsc
 
 done_detecting:
 
@@ -143,6 +132,19 @@ nmi:
    pld
 return_int:
    rti
+
+detect_pal_ntsc:
+    lda $213f
+    ;    fl0mvvvv
+    bit #%00010000
+    beq ntsc
+    lda pal_str,x
+    jmp done_detecting
+
+ntsc:
+    ; NTSC detected
+   lda ntsc_str,x
+   jmp done_detecting
 
 .include "charset.asm"
 
